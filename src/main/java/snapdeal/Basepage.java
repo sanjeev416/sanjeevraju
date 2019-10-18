@@ -1,7 +1,9 @@
 package snapdeal;
 
+import java.awt.List;   
 import java.util.concurrent.TimeUnit;
 
+import org.dom4j.Element;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,13 +56,24 @@ public class Basepage {
 
 	public String getTxtAttribute(WebElement element) {
 		return element.getAttribute("value");
+		
 	}
 
 	public String selectFromDropDown(WebElement element, String option) {
 		Select obj = new Select(element);
 		obj.selectByValue(option);
 		return obj.getFirstSelectedOption().getText();
+		
 	}
+	
+	public void selectoption(java.util.List<WebElement> orgs, WebElement element,String opti) {
+		Select ab = new Select(element);
+		 orgs = ab.getOptions();
+		 orgs = ab.getAllSelectedOptions();
+		 
+  
+		  }
+		
 
 	public boolean isElementVisible(WebElement element) {
 		try {
@@ -77,16 +90,17 @@ public class Basepage {
 	}	
 	
 	public void moveMouseCursor(WebElement element) {
+		
 		new Actions(driver).moveToElement(element).build().perform();
 	}
 	
 
-	public void popups(WebElement element)
+	public void popups(WebElement element) throws InterruptedException
 	
 	{
-		Alert a = driver.switchTo().alert();
-		a.accept();
-		a.dismiss(); 
+		driver.switchTo().alert();
+		Thread.sleep(5000);
+
 					
 	}
 	
@@ -95,6 +109,10 @@ public class Basepage {
 	public void quitDriver() {
 		driver.quit();
 	}
+
+	
+	
+	
 }
 
 

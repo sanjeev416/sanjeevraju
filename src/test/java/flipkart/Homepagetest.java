@@ -25,27 +25,28 @@ public class Homepagetest {
 
 	{
 
-		Assert.assertTrue(hp.elementFound(hp.getwomen()), "Failed");
 		hp.getwomen().click();
 		hp.getTitlte().contains("Women");
+		Assert.assertTrue(hp.elementFound(hp.getwomen()), "Failed");
 	}
 
-	@Test(groups = ("Regression"))
+	@Test
 	public void verifydresses()
 
 	{
-		Assert.assertTrue(hp.elementFound(hp.getdresses()), "Failed");
 		hp.getdresses().click();
 		hp.getTitlte().contains("Dresses");
+		Assert.assertTrue(hp.elementFound(hp.getdresses()), "Failed");
 	}
 
 	@Test
 	public void verifytshirts()
 
 	{
-		Assert.assertTrue(hp.elementFound(hp.gettshirts()), "Failed");
+		
 		hp.gettshirts().click();
 		hp.getTitlte().contains("tshirts");
+		Assert.assertTrue(hp.elementFound(hp.gettshirts()), "Failed");
 
 	}
 

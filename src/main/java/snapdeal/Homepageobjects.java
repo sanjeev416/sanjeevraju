@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class Homepageobjects extends Basepage {
-
+    
 	@FindBys(@FindBy (xpath = "//div[@id='block_top_menu']/ul/li[1]/a"))
 	private WebElement Womentab;
 
@@ -16,15 +16,13 @@ public class Homepageobjects extends Basepage {
 	@FindBys(@FindBy(xpath = "//div[@id='block_top_menu']/ul/li[3]/a"))
 	private WebElement Tshirts;
 	
-	
-	
-  	public Homepageobjects() 
+	 	public Homepageobjects() 
     	{
 		PageFactory.initElements(driver, this);
 
 	}
 
-	public WebElement getwomen()
+	 public WebElement getwomen()
 	{
 		return Womentab;
 	}
